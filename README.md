@@ -1,7 +1,7 @@
-Classification 
-Predicting Customer Churn
+# **Classification** 
+## Predicting Customer Churn
 
-Introduction
+### Introduction
 Churn is a measure of how many customers stop using a product or service. A high churn rate can negatively impact monthly recurring revenue and can also indicate dissatisfaction with a product or service. In its most simplistic form, the churn rate is the percentage of total customers that stop using/paying over a period.
 A company may want a machine learning model to predict customer churn for several reasons:
 Retention: By predicting which customers are likely to churn, a company can take proactive measures to prevent them from leaving. This may involve offering incentives, improving customer service, or addressing specific pain points.
@@ -10,9 +10,9 @@ Competitive advantage: Companies able to predict and prevent customer churn may 
 Customer satisfaction: Predicting and preventing churn can lead to increased customer satisfaction. By addressing customer concerns and improving the customer experience, a company can build stronger relationships with its customers.
 Overall, predicting customer churn can help a company increase retention, reduce costs, gain a competitive advantage, and improve customer satisfaction hence the need for this project.
 
-Aims:
+## Aims:
 We aimed to find the likelihood of a customer leaving the organization, the key indicators of churn as well as the retention strategies that can be implemented to avert this problem.
-Methodology:  
+## Methodology:  
 This work was done based on the CRISP-DM algorithm and this article shall be focused on explaining these steps which involves the following; 
 Business understanding. 
 Data understanding. 
@@ -25,10 +25,13 @@ The last step in this process, which is deployment, will be carried out in the c
 Business understanding:
 The data for the analysis was provided with no background information on the dataset.
 
-Data Understanding:
+### Data Understanding:
 The data for the project was provided in a csv format. The following describes the columns present in the data.
+
 Gender -- Whether the customer is a male or a female
+
 SeniorCitizen -- Whether a customer is a senior citizen or not
+
 Partner -- Whether the customer has a partner or not (Yes, No)
 Dependents -- Whether the customer has dependents or not (Yes, No)
 Tenure -- Number of months the customer has stayed with the company
@@ -56,7 +59,7 @@ Does age and gender contribute to the churn rate?
 Is there a relationship between tenure and churn rate?
 Does the contract term affect the churn rate?
 
-Hypothesis
+### Hypothesis
 Null Hypothesis: The contract term does not affect attrition
 Alternate hypothesis: The contract term affects attrition.
 We imported libraries and packages then we read the data into pandas using the read csv method then loaded the data into pandas data frame.
