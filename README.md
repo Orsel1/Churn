@@ -22,9 +22,11 @@ This work was done based on the CRISP-DM algorithm and this article shall be foc
   <li>Evaluation.</li>
   <li>Deployment.</li>
   </ol>
-This work was done using Jupyter notebook in Google Collaboratory in Python programming language.
-To go to the github repository containing the notebook click [here]()
+  
+This work was done using Jupyter notebook in Google Collaboratory in Python programming language.  
+To go to the notebook click [here](https://github.com/Orsel1/Churn/blob/3da2af1e15612db0aa3267ce9d98732df4e126e8/Classification_lp3%20.ipynb)    
 The last step in this process, which is deployment, will be carried out in the coming weeks therefore we will not talk about it in this write-up.
+
 <h4>Business understanding:</h4>
 The data for the analysis was provided with no background information on the dataset.
 
