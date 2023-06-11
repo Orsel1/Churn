@@ -1,7 +1,7 @@
 # **Classification** 
 ## Predicting Customer Churn
 
-## Introduction
+### Introduction
 Churn is a measure of how many customers stop using a product or service. A high churn rate can negatively impact monthly recurring revenue and can also indicate dissatisfaction with a product or service. In its most simplistic form, the churn rate is the percentage of total customers that stop using/paying over a period.
 A company may want a machine learning model to predict customer churn for several reasons:
 Retention: By predicting which customers are likely to churn, a company can take proactive measures to prevent them from leaving. This may involve offering incentives, improving customer service, or addressing specific pain points.
@@ -10,22 +10,25 @@ Competitive advantage: Companies able to predict and prevent customer churn may 
 Customer satisfaction: Predicting and preventing churn can lead to increased customer satisfaction. By addressing customer concerns and improving the customer experience, a company can build stronger relationships with its customers.
 Overall, predicting customer churn can help a company increase retention, reduce costs, gain a competitive advantage, and improve customer satisfaction hence the need for this project.
 
-## Aims:
+### Aims:
 We aimed to find the likelihood of a customer leaving the organization, the key indicators of churn as well as the retention strategies that can be implemented to avert this problem.
-## Methodology:  
+### Methodology:  
 This work was done based on the CRISP-DM algorithm and this article shall be focused on explaining these steps which involves the following; 
-Business understanding. 
-Data understanding. 
-Data preparation. 
-Modeling. 
-Evaluation. 
-Deployment.
+<ol>
+  <li>Business understanding. </li>
+  <li>Data understanding. </li>
+  <li>Data preparation.</li>
+  <li>Modeling.</li> 
+  <li>Evaluation.</li>
+  <li>Deployment.</li>
+  </ol>
 This work was done using Jupyter notebook in Google Collaboratory in Python programming language.
+To go to the github repository containing the notebook click [here]()
 The last step in this process, which is deployment, will be carried out in the coming weeks therefore we will not talk about it in this write-up.
-Business understanding:
+<h4>Business understanding:</h4>
 The data for the analysis was provided with no background information on the dataset.
 
-### Data Understanding:
+#### Data Understanding:
 The data for the project was provided in a csv format. The following describes the columns present in the data.  
 **Gender** -- Whether the customer is a male or a female  
 **SeniorCitizen** -- Whether a customer is a senior citizen or not  
@@ -49,14 +52,14 @@ The data for the project was provided in a csv format. The following describes t
 **Churn** -- Whether the customer churned or not (Yes or No)  
 
 We asked the following questions and were set to answer them:
-### Questions
+ #### Questions
 - Do senior citizens have a higher churn rate than others?
 - Do customers with dependents have higher church rates?
 - Does age and gender contribute to the churn rate?
 - Is there a relationship between tenure and churn rate?
 - Does the contract term affect the churn rate?
 
-### Hypothesis
+#### Hypothesis
 * **Null Hypothesis:** The contract term does not affect attrition
 * **Alternate hypothesis:** The contract term affects attrition.  
 We imported libraries and packages then we read the data into pandas using the read csv method then loaded the data into pandas data frame.  
@@ -74,21 +77,21 @@ We called the following methods:
 </ol>
 We discovered that the Total Charges column’s data type was object, so we changed it to numeric.    
 
-### Univariate and Bivariate Analysis
+#### Univariate and Bivariate Analysis
 We did univariate and bivariate analysis on the dataset, and we found out that:        
 
-### Hypothesis Testing
+#### Hypothesis Testing
 - Null Hypothesis: The contract term does not affect attrition
 - Alternate hypothesis: The contract term affects attrition  
 We used the one-way ANOVA test to determine if there were significant differences among the means of the independent groups. It assessed whether the variation between group means was larger than the variation within each group.
 We got a p-value of zero (0). We saw that there is compelling evidence to reject the null hypothesis. This indicates significant differences among the group means being compared (Churn and Contract). We therefore conclude that the contract term affects attrition, the null hypothesis is rejected.  
-## Data preparation.
+### Data preparation.
 
 There were columns in the dataset that were non-numeric, so we did feature encoding using one hot encoder.  
 This is a classification project therefore, the data contained both the labels and the independent data in one dataset. We separated the dataset into x and y, the y subset which is the labels is a slice of the dataset containing only the churn column while the rest of the subset is the rest of the dataset with the churn column dropped.  
 We scaled the data set with standard scaler, and we did resampling also.  
 We split the dataset into train, test and validation sets using the scikit learn train test split function.  
-## Modeling
+### Modeling
 We trained the following models:  
 <ol>
   <li> Logistic Regression</li>
@@ -99,8 +102,9 @@ We trained the following models:
 <li>Histogram-based Gradient Boosting Classifier</li>
 <li>Ada Boost Classifier</li>
 <li>Gradient Boosting Classifier</li>
-</ol>
-### Evaluation
+</ol>  
+<h4> Evaluation</h4>
+
 We trained the first eight models with default hyperparameters and got the following results for their metrics evaluation as shown in the table below:
 <table>
   <tr>
@@ -176,10 +180,10 @@ For f1 Score, Gradient Boosting performed the best with 84.31% score and Logisti
 Because our data is unbalanced, the F1 score and Area Under the Receiver Operating Characteristic Curve (AUC-ROC) were used to evaluate the performance of the various models.
 Therefore, Gradient Boosting was the best model among the considered models
 
-### Feature Importance
+#### Feature Importance
 From the chart below we saw that not all the features were contributing very much to the results we got from the training and evaluation of our models, so we dropped some of the less key features.
                  
-### Hyperparameter Tuning
+#### Hyperparameter Tuning
 From research we did about the gradient boosting model, we started our hyperparameter tuning with the following parameters:
 - N estimators
 - Max depth
@@ -195,7 +199,7 @@ We retrained the model this time using the optimum values from the hyperparamete
 + F1 Score: 86.12% 
 + ROC AUC Score: 93.68% 
 The result above shows that the performance metrices have increased because the initial value of F1 score was 83.96 but it got to 86.12 after hyperparameter tuning. Also, the ROC AUC score was 92.68% but increased to 93.68% after hyperparameter tuning.
-## Conclusion
+### Conclusion
 We discovered that the best performing model for this project is gradient boosting classifier, it performed better with N estimators of 100, max depth of 5 and learning rate of 0.1. We also believe that a better performance can still be achieved by adding more values to the hyperparameters.
 There is evidence that customers are leaving the company because of high charges. The charges are mostly coming from internet services and the most affected customers are those who have partners and dependents both genders inclusive.
 
